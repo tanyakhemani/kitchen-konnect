@@ -1,0 +1,43 @@
+@use "./fonts" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
+
+@include font-faces;
+
+// Global styles
+@mixin global-styles {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    body {
+        font-size: 1rem;
+        font-family: $font-regular;
+        margin: 0;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    div,
+    li,
+    ul,
+    a,
+    span,
+    section,
+    article {
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+}
