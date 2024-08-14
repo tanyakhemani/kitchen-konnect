@@ -1,0 +1,11 @@
+.home{
+
+    padding: 0 1.5rem;
+
+    &__allCards{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 1.5rem 0;
+    }
+}

@@ -1,0 +1,30 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+
+@include font-faces;
+
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: $font-regular;
+    font-size: 2rem;
+    padding: 2rem 0;
+    background-color: rgb(210, 238, 255);
+
+    &__logo{
+        width: 40%;
+    }
+
+    &__logo-image{
+        width: 6rem;
+        height: 8%;
+    }
+
+    &__button{
+        border: 3px solid black;
+        width: 20%;
+        text-align: center;
+        cursor: pointer;
+    }
+}
