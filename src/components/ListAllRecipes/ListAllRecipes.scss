@@ -2,15 +2,15 @@
 
     &__top{
         display: flex;
-        gap: 1rem;
+        gap: 2.5rem;
         padding: 1.5rem;
     }
 
-    &__backbtn{
-        width: 20%;
+    &__backBtn{
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 2rem;
     }
 
     &__back{
@@ -18,7 +18,7 @@
     }
 
     &__searchBox{
-        width: 80%;
+        width: 90%;
         display: flex;
         align-items: center;
         position: relative;
