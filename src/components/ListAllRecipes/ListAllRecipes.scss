@@ -1,0 +1,46 @@
+.allRecipes{
+
+    &__top{
+        display: flex;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    &__backbtn{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__back{
+        width: 100%;
+    }
+
+    &__searchBox{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 4rem;
+    }
+
+    &__searchIcon{
+        position: absolute;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        height: 1.5rem;
+    }
+
+    &__searchInput{
+        height: 100%;
+        border: 1px solid #e1e1e1;
+        border-radius: 0.5rem;
+        width: 100%;
+        color: #323232;
+        background-color: #fafafa;
+        padding-left: 3rem;
+
+    }
+
+}
