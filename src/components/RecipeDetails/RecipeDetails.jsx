@@ -21,7 +21,7 @@ const RecipeDetails = () => {
             </div>
             <div className="addRecipe__buttons">
                 <Link className="addRecipe__buttonBox" to={"/back"} >
-                    <button className="addRecipe__button">Back</button>
+                    <img className="addRecipe__button" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" />
                 </Link>
 
                 <Link className="addRecipe__buttonBox" to={"/add"} >
