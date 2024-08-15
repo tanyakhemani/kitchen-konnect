@@ -7,6 +7,7 @@ import Home from './pages/Home/Home'
 import AddRecipe from './pages/AddRecipe/AddRecipe'
 import ViewAllRecipes from './pages/ViewAllRecipes/ViewAllRecipes'
 import ViewRecipe from './pages/ViewOneRecipe/ViewRecipe'
+import DeleteRecipe from './pages/DeleteRecipe/DeleteRecipe'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
             <Route path='/add' element={<AddRecipe />} />
             <Route path='/view' element={<ViewAllRecipes />} />
             <Route path="/view/:id"  element={<ViewRecipe />} />
+            <Route path='/delete/:id' element={<DeleteRecipe />} />
           </Routes>
         <Footer />
       </BrowserRouter>

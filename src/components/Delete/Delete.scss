@@ -1,0 +1,40 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.deleteRecipe{
+    display: flex;
+    flex-direction:column; 
+    justify-content: center;
+    padding: 1.5rem;
+    border: 1px solid white;
+    height: 50vh;
+
+    &__msg{
+        font-size: 1.4rem;
+        align-self: center;
+    }
+
+    &__buttons{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 2rem 0;
+    }
+
+    &__button{
+        height: 3rem;
+        width: 6rem;
+        border-radius: 0.5rem;
+        border: 0px solid white;
+        cursor: pointer;
+
+        &:hover{
+            background-color: lightgray;
+        }
+    }
+  
+    .deletebtn{
+        @include deletebtn;
+    }
+}
