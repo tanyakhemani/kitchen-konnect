@@ -3,18 +3,17 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.addRecipe{
-    padding: 0 1.5rem;
+.recipeDetails{
 
     &__detailsBox{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 0;
+        padding: 2rem 0;
     }
 
     &__imageBox{
-        width:30%;
+        width:35%;
         height: 12rem;
         border: 1px solid black;
     }
@@ -29,7 +28,7 @@
 
     &__title{
         font-family: $font-regular;
-        height: 2rem;
+        height: 2.5rem;
         padding-left: 0.5rem;
         @include secondary-border;
     }
@@ -55,35 +54,7 @@
         @include secondary-border;
     }
 
-    &__buttons{
-        padding: 2rem 0;
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-    }
-
-    &__button{
-        height: 3rem;
-        width: 6rem;
-        border-radius: 0.5rem;
-        border: unset;
-        cursor: pointer;
-
-        &:hover{
-            background-color: lightgray;
-        }
-    }
-
     .ingredients{
        height: 9rem; 
     }
-
-    .cancelbtn{
-      @include cancelbtn;
-    }
-
-    .savebtn{
-        @include savebtn;
-    }
-
 }

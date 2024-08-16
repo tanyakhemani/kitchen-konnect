@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import RecipeDetails from "../../components/RecipeDetails/RecipeDetails";
 
-const AddRecipe = () => {
+const EditRecipe = () => {
+
     return(
         <>
             <RecipeDetails />
-
+            
             <div className="recipeDetails">
                 <div className="recipeDetails__buttons">
                     <Link className="recipeDetails__buttonBox" to={"/back"} >
-                        <img className="recipeDetails__button backbtn" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" />
+                        <img className="recipeDetails__button" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" />
                     </Link>
 
                     <Link className="recipeDetails__buttonBox" to={"/add"} >
@@ -17,11 +18,12 @@ const AddRecipe = () => {
                     </Link>
                     
                     <Link className="recipeDetails__buttonBox" to={""}>
-                        <button className="recipeDetails__button savebtn">Add</button>
+                        <button className="recipeDetails__button savebtn">Save</button>
                     </Link>
                 </div>
             </div>
+            
         </>
     )
 }
-export default AddRecipe;
+export default EditRecipe;

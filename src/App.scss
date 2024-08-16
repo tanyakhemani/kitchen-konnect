@@ -5,3 +5,25 @@
 
 @include font-faces;
 @include global-styles;
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &__main-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 12rem;
+        padding: 0 1.6rem;
+
+        @include tablet {
+            margin-top: -18rem;
+            padding: 0 3.2rem;
+        }
+        @include desktop {
+            padding: 0 10rem;
+        }
+    }
+}

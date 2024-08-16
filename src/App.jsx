@@ -8,24 +8,31 @@ import AddRecipe from './pages/AddRecipe/AddRecipe'
 import ViewAllRecipes from './pages/ViewAllRecipes/ViewAllRecipes'
 import ViewRecipe from './pages/ViewOneRecipe/ViewRecipe'
 import DeleteRecipe from './pages/DeleteRecipe/DeleteRecipe'
+import EditRecipe from './pages/EditRecipe/EditRecipe'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+     <div className="app">
       <BrowserRouter>
-        <Header />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/add' element={<AddRecipe />} />
-            <Route path='/view' element={<ViewAllRecipes />} />
-            <Route path="/view/:id"  element={<ViewRecipe />} />
-            <Route path='/delete/:id' element={<DeleteRecipe />} />
-          </Routes>
-        <Footer />
-      </BrowserRouter>
+          <Header />
 
+          <div className="app__main-wrapper">
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/add' element={<AddRecipe />} />
+                <Route path='/view' element={<ViewAllRecipes />} />
+                <Route path="/view/:id"  element={<ViewRecipe />} />
+                <Route path='/edit/:id' element={<EditRecipe />} />
+                <Route path='/delete/:id' element={<DeleteRecipe />} />
+              </Routes>
+          </div>
+          
+          <Footer />
+        </BrowserRouter>
+     </div>
     </>
   )
 }

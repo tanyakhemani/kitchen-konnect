@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ViewCard from "../ViewCard/ViewCard";
 import "./ListAllRecipes.scss";
+import Search from "../Search/Search";
 
 const ListAllRecipes = () => {
 
@@ -11,10 +12,7 @@ const ListAllRecipes = () => {
                 <Link to={"/back"}>
                     <img className="allRecipes__backBtn" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" />
                 </Link>
-                <div className="allRecipes__searchBox">
-                    <img className="allRecipes__searchIcon" src="/src/assets/Icons/search.svg" alt="Search Icon" />
-                    <input className="allRecipes__searchInput" type="text" placeholder="Search Recipes"/>
-                </div>
+                <Search />
             </div>
             <ViewCard />
         </section>
