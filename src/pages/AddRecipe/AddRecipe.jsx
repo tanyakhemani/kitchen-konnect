@@ -16,7 +16,7 @@ const AddRecipe = () => {
                         <button className="recipeDetails__button cancelbtn">Cancel</button>
                     </Link>
                     
-                    <Link className="recipeDetails__buttonBox" to={""}>
+                    <Link className="recipeDetails__buttonBox" to={"/add"}>
                         <button className="recipeDetails__button savebtn">Add</button>
                     </Link>
                 </div>

@@ -10,10 +10,10 @@ const Header = () => {
                 <div className="navbar__logo">
                     <img className="navbar__logo-image" src={logo} alt="Logo Image" />
                 </div>
-                <Link className="navbar__button" to="/">
+                <Link className="navbar__button" to="/add">
                     <div>Add</div>
                 </Link>
-                <Link className="navbar__button" to="/">
+                <Link className="navbar__button" to="/view">
                     <div>View</div>
                 </Link>
             </nav>

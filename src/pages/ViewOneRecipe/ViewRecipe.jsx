@@ -13,9 +13,15 @@ const ViewRecipe = () => {
                     <img className="viewRecipe__icon viewRecipe__back" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" />
                 </Link>
                 <img className="viewRecipe__icon" src="/src/assets/Icons/like.svg" alt="Likes Icon" />
-                <img className="viewRecipe__icon" src="/src/assets/Icons/edit.svg" alt="Edit Icon" />
-                <img className="viewRecipe__icon viewRecipe__upload" src="/src/assets/Icons/upload.svg" alt="Upload Icon" />
-                <img className="viewRecipe__icon" src="/src/assets/Icons/icon-delete.svg" alt="Delete Icon" />
+                <Link to={"/edit/:id"}>
+                    <img className="viewRecipe__icon" src="/src/assets/Icons/edit.svg" alt="Edit Icon" />
+                </Link>
+                <Link to={""}>
+                    <img className="viewRecipe__icon viewRecipe__upload" src="/src/assets/Icons/share.svg" alt="Share Icon" />
+                </Link>
+                <Link to={"/delete/:id"}>
+                    <img className="viewRecipe__icon" src="/src/assets/Icons/icon-delete.svg" alt="Delete Icon" />
+                </Link>
             </div>
         </>
     )
