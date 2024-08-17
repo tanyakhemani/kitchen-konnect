@@ -5,7 +5,7 @@ const Card = ({ card }) => {
     return(
         <>
             <div className="card">
-                <img className="card__img" src={card?.img || "/public/vite.svg"} alt="" />
+                <img className="card__img" src={card?.image || "/public/vite.svg"} alt="" />
                 <div className="card__title">{card?.title || 'Some title'}</div>
             </div>
         </>
