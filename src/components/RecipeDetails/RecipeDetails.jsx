@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import "./RecipeDetails.scss";
-import { useEffect, useState } from "react";
 
 const RecipeDetails = ({newRecipe, setNewRecipe, errors}) => {
 
@@ -33,7 +31,7 @@ const RecipeDetails = ({newRecipe, setNewRecipe, errors}) => {
                 </div>
                 <div className="recipeDetails__details">
                     <div>
-                        <input className={`recipeDetails__title ${errors.title? 'fieldError':''}`} type="text" placeholder="Title" value={newRecipe.title} onChange={handleChangeTitle} />
+                        <input className={`recipeDetails__title ${errors.title? 'errorBox':''}`} type="text" placeholder="Title" value={newRecipe.title} onChange={handleChangeTitle} />
                         { errors.title && <div className="errorMsg">Please fill in the details</div> }
                     </div>
                     <textarea className="recipeDetails__description" type="text" placeholder="Description" value={newRecipe.description} onChange={handleChangeDescription}/>
@@ -41,12 +39,12 @@ const RecipeDetails = ({newRecipe, setNewRecipe, errors}) => {
             </div>
             <div className="recipeDetails__wrapper">
                 <div>
-                    <textarea className={`recipeDetails__textarea ingredients ${errors.ingredients? 'fieldError' : ''}`} placeholder="Ingredients" value={newRecipe.ingredients} onChange={handleChangeIngredients} />
+                    <textarea className={`recipeDetails__textarea ingredients ${errors.ingredients? 'errorBox' : ''}`} placeholder="Ingredients" value={newRecipe.ingredients} onChange={handleChangeIngredients} />
                     { errors.ingredients && <div className="errorMsg">Please fill in the details</div> }
                 </div>
                 
                 <div>
-                    <textarea className={`recipeDetails__textarea ${errors.steps? 'fieldError' : ''}`} placeholder="Steps" value={newRecipe.steps} onChange={handleChangeSteps}/>
+                    <textarea className={`recipeDetails__textarea ${errors.steps? 'errorBox' : ''}`} placeholder="Steps" value={newRecipe.steps} onChange={handleChangeSteps}/>
                     { errors.steps && (
                         <>
                             <div></div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import RecipeDetails from "../../components/RecipeDetails/RecipeDetails";
 import { useState } from "react";
 import axios from "axios";
@@ -53,9 +53,8 @@ const AddRecipe = () => {
             alert(`Cannot add recipe, some error occured`);
         }
     }
-
-
-
+        
+    const navigate = useNavigate();
 
     return(
         <>
@@ -63,11 +62,9 @@ const AddRecipe = () => {
 
             <div className="recipeDetails">
                 <div className="recipeDetails__buttons">
-                    <Link className="recipeDetails__buttonBox" to={"/back"} >
-                        <img className="recipeDetails__button backbtn" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" />
-                    </Link>
+                    <img className="recipeDetails__button backbtn" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" onClick= {() => navigate(-1)}/>
 
-                    <Link className="recipeDetails__buttonBox" to={"/add"} >
+                    <Link className="recipeDetails__buttonBox" to={"/"} >
                         <button className="recipeDetails__button cancelbtn">Cancel</button>
                     </Link>
                     
