@@ -1,25 +1,33 @@
 import "./RecipeDetails.scss";
 
-const RecipeDetails = ({newRecipe, setNewRecipe, errors}) => {
+const RecipeDetails = ({recipe, saveRecipe, errors, viewOnly}) => {
 
     const handleChangeTitle = (event)=> {
-        const title = event.target.value;
-        setNewRecipe({...newRecipe, title});
+        if(!viewOnly){
+            const title = event.target.value;
+            saveRecipe({...recipe, title});
+        }  
     }
 
     const handleChangeDescription = (event)=> {
-        const description = event.target.value;
-        setNewRecipe({...newRecipe, description});
+        if(!viewOnly){
+            const description = event.target.value;
+            saveRecipe({...recipe, description});
+        }  
     }
 
     const handleChangeIngredients = (event)=>{
-        const ingredients = event.target.value;
-        setNewRecipe({...newRecipe, ingredients});
+        if(!viewOnly){
+            const ingredients = event.target.value;
+            saveRecipe({...recipe, ingredients});
+        }
     }
 
     const handleChangeSteps = (event)=>{
-        const steps = event.target.value;
-        setNewRecipe({...newRecipe, steps});
+        if(!viewOnly){
+            const steps = event.target.value;
+            saveRecipe({...recipe, steps});
+        }
     }
 
     return(
@@ -31,21 +39,27 @@ const RecipeDetails = ({newRecipe, setNewRecipe, errors}) => {
                 </div>
                 <div className="recipeDetails__details">
                     <div>
-                        <input className={`recipeDetails__title ${errors.title? 'errorBox':''}`} type="text" placeholder="Title" value={newRecipe.title} onChange={handleChangeTitle} />
-                        { errors.title && <div className="errorMsg">Please fill in the details</div> }
+                        <h3 className="recipeDetails__heading">Title</h3>
+                        <input className={`recipeDetails__title ${errors?.title? 'errorBox':''}`} type="text" placeholder="Title" value={recipe.title} onChange={handleChangeTitle} disabled={viewOnly} />
+                        { errors?.title && <div className="errorMsg">Please fill in the details</div> }
                     </div>
-                    <textarea className="recipeDetails__description" type="text" placeholder="Description" value={newRecipe.description} onChange={handleChangeDescription}/>
+                    <div>
+                        <h3 className="recipeDetails__heading">Description</h3>
+                        <textarea className="recipeDetails__description" type="text" placeholder="Description" value={recipe.description} onChange={handleChangeDescription} disabled={viewOnly} />
+                    </div>
                 </div>
             </div>
             <div className="recipeDetails__wrapper">
                 <div>
-                    <textarea className={`recipeDetails__textarea ingredients ${errors.ingredients? 'errorBox' : ''}`} placeholder="Ingredients" value={newRecipe.ingredients} onChange={handleChangeIngredients} />
-                    { errors.ingredients && <div className="errorMsg">Please fill in the details</div> }
+                    <h3 className="recipeDetails__heading">Ingredients</h3>
+                    <textarea className={`recipeDetails__textarea ingredients ${errors?.ingredients? 'errorBox' : ''}`} placeholder="Ingredients" value={recipe.ingredients} onChange={handleChangeIngredients} disabled={viewOnly} />
+                    { errors?.ingredients && <div className="errorMsg">Please fill in the details</div> }
                 </div>
                 
                 <div>
-                    <textarea className={`recipeDetails__textarea ${errors.steps? 'errorBox' : ''}`} placeholder="Steps" value={newRecipe.steps} onChange={handleChangeSteps}/>
-                    { errors.steps && (
+                    <h3 className="recipeDetails__heading">Steps</h3>
+                    <textarea className={`recipeDetails__textarea ${errors?.steps? 'errorBox' : ''}`} placeholder="Steps" value={recipe.steps} onChange={handleChangeSteps} disabled={viewOnly} />
+                    { errors?.steps && (
                         <>
                             <div></div>
                             <div className="errorMsg">Please fill in the details</div>

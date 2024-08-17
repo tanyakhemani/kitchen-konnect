@@ -14,8 +14,8 @@
 
     &__imageBox{
         width:35%;
-        height: 14rem;
-        border: 1px solid black;
+        height: 14.5rem;
+        @include light-border;
     }
 
     &__details{
@@ -27,18 +27,19 @@
     }
 
     &__title{
-        font-family: $font-regular;
+        font-family: $font-bold;
         height: 2.5rem;
         width: 100%;
         padding-left: 0.5rem;
-        @include secondary-border;
+        @include light-border;
     }
 
     &__description{
         font-family: $font-regular;
         height: 8rem;
+        width: 100%;
         padding-left: 0.5rem;
-        @include secondary-border;
+        @include light-border;
     }
 
     &__wrapper{
@@ -52,7 +53,7 @@
         width: 100%;
         height: 25rem;
         padding: 1rem;
-        @include secondary-border;
+        @include light-border;
     }
 
     .ingredients{
@@ -67,5 +68,9 @@
         color: red;
         font-family: $font-regular;
         padding-top: 0.3rem;
+    }
+
+    .heading{
+        font-family: $font-regular;
     }
 }

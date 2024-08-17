@@ -58,7 +58,7 @@ const AddRecipe = () => {
 
     return(
         <>
-            <RecipeDetails newRecipe={newRecipe} setNewRecipe={setNewRecipe} errors={errors} />
+            <RecipeDetails recipe={newRecipe} saveRecipe={setNewRecipe} errors={errors} />
 
             <div className="recipeDetails">
                 <div className="recipeDetails__buttons">

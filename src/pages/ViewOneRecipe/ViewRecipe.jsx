@@ -1,12 +1,34 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import RecipeDetails from "../../components/RecipeDetails/RecipeDetails";
 import "./ViewRecipe.scss";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const ViewRecipe = () => {
 
+    const { id } = useParams();
+
+    const[ recipe, setRecipe ] = useState({
+        image: null,
+        title:"",
+        description: "",
+        ingredients: "",
+        steps: ""
+    });
+
+    const loadRecipe = async() => {
+        const response = await axios.get(`http://localhost:8080/api/recipes/${id}`)
+        const oneRecipe = response.data;
+        setRecipe(oneRecipe);
+    }
+
+    useEffect(()=> {
+        loadRecipe();
+    }, [id])
+
     return(
         <>
-            <RecipeDetails />
+            <RecipeDetails recipe={recipe} saveRecipe={setRecipe} viewOnly={true} />
             
             <div className="viewRecipe__icons">
                 <Link to={"/back"}>

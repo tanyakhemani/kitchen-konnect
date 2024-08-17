@@ -16,6 +16,11 @@
     border: 1px solid grey;
 }
 
+@mixin light-border{
+    border: 1px solid lightgray;
+}
+
+
 @mixin cancelbtn{
     background-color: rgb(255, 123, 123);
     color: white;
