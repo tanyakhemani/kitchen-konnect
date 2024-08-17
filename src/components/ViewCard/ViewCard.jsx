@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./ViewCard.scss";
 
-const ViewCard = () => {
+const ViewCard = ({recipe}) => {
 
     return(
         <>
@@ -11,13 +11,13 @@ const ViewCard = () => {
                 </div>
                 <div className="viewCard__detailBox">
                     <div className="viewCard__details">
-                        <input type="text" className="viewCard__title" placeholder="Title" />
+                        <input type="text" className="viewCard__title" placeholder="Title" value={recipe.title} disabled/>
                         <Link to={"/delete/:id"}>
                             <img className="viewCard__delete" src="/src/assets/Icons/icon-delete.svg" alt="Delete Icon" />
                         </Link>
                     </div>
                     <div className="viewCard__descriptionBox">
-                        <textarea className="viewCard__description" placeholder="Description" />
+                        <textarea className="viewCard__description" placeholder="Description" value={recipe.description} disabled/>
                             <div className="viewCard__icons">
                                 <img className="viewCard__icon" src="/src/assets/Icons/like.svg" alt="Likes Icon" />
                                 <Link to={"/edit/:id"}>
