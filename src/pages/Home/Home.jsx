@@ -9,20 +9,24 @@ const Home = () => {
 
     const [recipes, setRecipes] = useState();
 
-    const someFunction = async() => {
-        const response = await axios.get("http://localhost:8080/api/recipes");
-        const allRecipes = response.data;
+    const loadTopRecipes = async() => {
+        try {
+            const response = await axios.get("http://localhost:8080/api/recipes");
+            const allRecipes = response.data;
         
-        const topRecipes = allRecipes.sort((a,b)=>(
-            b.likes - a.likes
-        ))
-        topRecipes.splice(6, topRecipes.length-6)
+            const topRecipes = allRecipes.sort((a,b)=>(
+                b.likes - a.likes
+            ))
+            topRecipes.splice(6, topRecipes.length-6)
         
-        setRecipes(topRecipes);
+            setRecipes(topRecipes);
+        } catch (error) {
+            alert(`Cannot load recipes, error occured`)
+        }   
     }
 
     useEffect(()=>{
-        someFunction();
+        loadTopRecipes();
     },[])
     
     return(

@@ -14,7 +14,7 @@
 
     &__imageBox{
         width:35%;
-        height: 12rem;
+        height: 14rem;
         border: 1px solid black;
     }
 
@@ -29,6 +29,7 @@
     &__title{
         font-family: $font-regular;
         height: 2.5rem;
+        width: 100%;
         padding-left: 0.5rem;
         @include secondary-border;
     }
@@ -56,5 +57,15 @@
 
     .ingredients{
        height: 9rem; 
+    }
+
+    .fieldError{
+        border: 1px solid red;
+    }
+
+    .errorMsg{
+        color: red;
+        font-family: $font-regular;
+        padding-top: 0.3rem;
     }
 }
