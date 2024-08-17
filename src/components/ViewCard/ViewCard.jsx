@@ -22,7 +22,7 @@ const ViewCard = ({recipe}) => {
                         <textarea className="viewCard__description" placeholder="Description" value={recipe.description} disabled/>
                             <div className="viewCard__icons">
                                 <img className="viewCard__icon" src="/src/assets/Icons/like.svg" alt="Likes Icon" />
-                                <Link to={"/edit/:id"}>
+                                <Link to={`/edit/${recipe.id}`}>
                                     <img className="viewCard__icon" src="/src/assets/Icons/edit.svg" alt="Edit Icon" />
                                 </Link>
                                 <Link to={""}>
