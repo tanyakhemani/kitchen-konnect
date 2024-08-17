@@ -1,6 +1,6 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import RecipeDetails from "../../components/RecipeDetails/RecipeDetails";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const AddRecipe = () => {
@@ -55,6 +55,10 @@ const AddRecipe = () => {
     }
         
     const navigate = useNavigate();
+
+    useEffect(()=>{
+        scroll({top:0});
+    }, [])
 
     return(
         <>

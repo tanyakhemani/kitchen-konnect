@@ -4,6 +4,7 @@ import Search from "../../components/Search/Search";
 import "./Home.scss";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -27,6 +28,7 @@ const Home = () => {
 
     useEffect(()=>{
         loadTopRecipes();
+        scroll({top:0});
     },[])
     
     return(
@@ -36,10 +38,9 @@ const Home = () => {
                 <div className="home__allCards">
                     {
                         recipes?.map((recipe)=>(
-                            <Card key={recipe.id} card={recipe} />
+                           <Card key={recipe.id} card={recipe} />
                         ))
                     }
-    
                 </div>
             </section>
             

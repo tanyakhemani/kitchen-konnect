@@ -19,6 +19,7 @@ const ViewAllRecipes = () => {
     
     useEffect(()=>{
         listRecipes();
+        scroll({top:0});
     }, []);
     
     const navigate = useNavigate();

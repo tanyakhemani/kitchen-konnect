@@ -3,6 +3,14 @@ import "./ViewCard.scss";
 
 const ViewCard = ({recipe}) => {
 
+    const handleShare = (id) => {
+        const recipeUrl = `${window.location}/${id}`;
+
+        navigator.clipboard.writeText(recipeUrl).then(()=>{
+            alert(`Recipe link copied to clipboard: ${recipeUrl}`);
+        })
+    }
+
     return(
         <>
             <div className="viewCard">
@@ -12,7 +20,7 @@ const ViewCard = ({recipe}) => {
                 <div className="viewCard__detailBox">
                     <div className="viewCard__details">
                         <Link className="viewCard__titleBox" to={`/view/${recipe.id}`}>
-                            <input type="text" className="viewCard__title" placeholder="Title" value={recipe.title} disabled/>
+                            <input type="text" className="viewCard__title" placeholder="Title" value={recipe.title}/>
                         </Link>
                         <Link to={`/delete/${recipe.id}`}>
                             <img className="viewCard__delete" src="/src/assets/Icons/icon-delete.svg" alt="Delete Icon" />
@@ -25,9 +33,7 @@ const ViewCard = ({recipe}) => {
                                 <Link to={`/edit/${recipe.id}`}>
                                     <img className="viewCard__icon" src="/src/assets/Icons/edit.svg" alt="Edit Icon" />
                                 </Link>
-                                <Link to={""}>
-                                    <img className="viewCard__icon viewCard__upload" src="/src/assets/Icons/share.svg" alt="Share Icon" />
-                                </Link>
+                                <img className="viewCard__icon viewCard__upload" src="/src/assets/Icons/share.svg" alt="Share Icon" onClick={() => handleShare(recipe.id)} />
                             </div>
                     </div>
                 </div>

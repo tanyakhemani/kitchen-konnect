@@ -67,6 +67,7 @@ const EditRecipe = () => {
 
     useEffect(()=> {
         loadRecipeToBeEdited();
+        scroll({top:0});
     }, [id])
 
     return(
