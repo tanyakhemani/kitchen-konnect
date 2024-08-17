@@ -1,9 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import RecipeDetails from "../../components/RecipeDetails/RecipeDetails";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 const EditRecipe = () => {
+
+    const navigate = useNavigate();
 
     const[errors, setErrors] = useState({
         title: false,
@@ -73,11 +75,9 @@ const EditRecipe = () => {
             
             <div className="recipeDetails">
                 <div className="recipeDetails__buttons">
-                    <Link className="recipeDetails__buttonBox" to={"/back"} >
-                        <img className="recipeDetails__button" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" />
-                    </Link>
+                    <img className="recipeDetails__button" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" onClick={()=>navigate(-1)}/>
 
-                    <Link className="recipeDetails__buttonBox" to={"/add"} >
+                    <Link className="recipeDetails__buttonBox" to={"/"} >
                         <button className="recipeDetails__button cancelbtn">Cancel</button>
                     </Link>
                     

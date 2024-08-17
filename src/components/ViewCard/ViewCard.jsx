@@ -14,7 +14,7 @@ const ViewCard = ({recipe}) => {
                         <Link className="viewCard__titleBox" to={`/view/${recipe.id}`}>
                             <input type="text" className="viewCard__title" placeholder="Title" value={recipe.title} disabled/>
                         </Link>
-                        <Link to={"/delete/:id"}>
+                        <Link to={`/delete/${recipe.id}`}>
                             <img className="viewCard__delete" src="/src/assets/Icons/icon-delete.svg" alt="Delete Icon" />
                         </Link>
                     </div>
