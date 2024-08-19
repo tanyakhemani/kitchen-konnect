@@ -2,6 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import RecipeDetails from "../../components/RecipeDetails/RecipeDetails";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "./EditRecipe.scss";
 
 const EditRecipe = () => {
 
@@ -72,21 +73,22 @@ const EditRecipe = () => {
 
     return(
         <>
-            <RecipeDetails recipe={editedRecipe} saveRecipe={setEditedRecipe} errors={errors}/>
-            
-            <div className="recipeDetails">
-                <div className="recipeDetails__buttons">
-                    <img className="recipeDetails__button" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" onClick={()=>navigate(-1)}/>
-
-                    <Link className="recipeDetails__buttonBox" to={"/"} >
-                        <button className="recipeDetails__button cancelbtn">Cancel</button>
-                    </Link>
-                    
-                    <Link className="recipeDetails__buttonBox" to={""}>
-                        <button className="recipeDetails__button savebtn" onClick={handleSave}>Save</button>
-                    </Link>
+            <section className="editRecipe">
+                <RecipeDetails recipe={editedRecipe} saveRecipe={setEditedRecipe} errors={errors}/>
+                
+                <div className="recipeDetails">
+                    <div className="recipeDetails__buttons">
+                        <Link className="recipeDetails__buttonBox" to={"/"} >
+                            <button className="recipeDetails__button cancelbtn">Cancel</button>
+                        </Link>
+                        
+                        <Link className="recipeDetails__buttonBox" to={""}>
+                            <button className="recipeDetails__button savebtn" onClick={handleSave}>Save</button>
+                        </Link>
+                    </div>
                 </div>
-            </div>
+            </section>
+            
             
         </>
     )

@@ -11,15 +11,19 @@
     margin-top: auto;
     padding: 2rem;
     border: 1px solid black;
+    background-color: black;
 
     &__contact{
         display: flex;
         width: 60%;
+        color: white;
     }
 
     &__icon{
-        width: 24px;
+        width: fit-content;
         height: 24px;
-        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

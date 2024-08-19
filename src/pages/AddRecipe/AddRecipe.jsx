@@ -2,6 +2,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import RecipeDetails from "../../components/RecipeDetails/RecipeDetails";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./AddRecipe.scss";
 
 const AddRecipe = () => {
 
@@ -62,21 +63,25 @@ const AddRecipe = () => {
 
     return(
         <>
-            <RecipeDetails recipe={newRecipe} saveRecipe={setNewRecipe} errors={errors} />
+            <section className="addRecipe">
+                <RecipeDetails recipe={newRecipe} saveRecipe={setNewRecipe} errors={errors} />
 
-            <div className="recipeDetails">
-                <div className="recipeDetails__buttons">
-                    <img className="recipeDetails__button backbtn" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" onClick= {() => navigate(-1)}/>
+                <div className="recipeDetails">
+                    <div className="recipeDetails__buttons">
+                        {/* <img className="recipeDetails__button backbtn" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" onClick= {() => navigate(-1)}/> */}
 
-                    <Link className="recipeDetails__buttonBox" to={"/"} >
-                        <button className="recipeDetails__button cancelbtn">Cancel</button>
-                    </Link>
-                    
-                    <div className="recipeDetails__buttonBox">
-                        <button className="recipeDetails__button savebtn" onClick={handleAddRecipe}>Add</button>
+                        <Link className="recipeDetails__buttonBox" to={"/"} >
+                            <button className="recipeDetails__button cancelbtn">Cancel</button>
+                        </Link>
+                        
+                        <div className="recipeDetails__buttonBox">
+                            <button className="recipeDetails__button savebtn" onClick={handleAddRecipe}>Add</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+            </section>
+            
         </>
     )
 }

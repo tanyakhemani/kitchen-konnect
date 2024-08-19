@@ -3,12 +3,17 @@ import "./ViewAllRecipes.scss";
 import { useEffect, useState } from "react";
 import Search from "../../components/Search/Search";
 import ViewCard from "../../components/ViewCard/ViewCard";
-import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const ViewAllRecipes = () => {
 
     const [recipeList, setRecipeList] = useState();
     const [searchValue, setSearchValue] = useState("");
+
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+
+    // const [searchParam, setSearchParam] = ;
 
     const listRecipes = async() => {
         const response = await axios.get("http://localhost:8080/api/recipes")
@@ -19,18 +24,20 @@ const ViewAllRecipes = () => {
     
     useEffect(()=>{
         listRecipes();
+        if (queryParams.size!==0) {
+            setSearchValue(queryParams.get('searchParam'));            
+        }
         scroll({top:0});
     }, []);
-    
-    const navigate = useNavigate();
 
     return(
         <>
             <section className="allRecipes">
                 <div className="allRecipes__top">
-                    <img className="allRecipes__backBtn" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" onClick={()=> navigate(-1)}/>
-                    <Search setSearchValue={setSearchValue}/>
+                    <Search searchValue={searchValue} setSearchValue={setSearchValue}/>
                 </div>
+                
+                <div className="allRecipes__viewCards">
                 {
                     recipeList?.filter((recipe) => (
                         recipe.title?.toLowerCase().includes(searchValue?.toLowerCase()) ||
@@ -40,6 +47,8 @@ const ViewAllRecipes = () => {
                         <ViewCard key={recipe.id} recipe={recipe}/>
                     ))
                 }
+                </div>
+                
                 
             </section>
         </>

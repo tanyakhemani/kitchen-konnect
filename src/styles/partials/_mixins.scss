@@ -20,6 +20,21 @@
     border: 1px solid lightgray;
 }
 
+@mixin commonButton{
+    height: 4rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    border: unset;
+
+    &:hover{
+        background-color: lightgray;
+    }
+
+    @include tablet{
+        width: 10rem;
+        height:4rem;
+    }
+}
 
 @mixin cancelbtn{
     background-color: rgb(255, 123, 123);
@@ -29,6 +44,8 @@
     &:hover{
         background-color: red;
     }
+
+
 }
 
 @mixin savebtn{

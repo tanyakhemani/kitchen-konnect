@@ -45,19 +45,22 @@ const ViewRecipe = () => {
 
     return(
         <>
-            <RecipeDetails recipe={recipe} saveRecipe={setRecipe} viewOnly={true} />
+            <section className="viewRecipe">
+                <RecipeDetails recipe={recipe} saveRecipe={setRecipe} viewOnly={true} />
+                
+                <div className="viewRecipe__icons">
+                    <img className="viewRecipe__icon viewRecipe__back" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" onClick={()=> navigate(-1)}/>
+                    <img className="viewRecipe__icon" src="/src/assets/Icons/like.svg" alt="Likes Icon" />
+                    <Link to={`/edit/${recipe.id}`}>
+                        <img className="viewRecipe__icon" src="/src/assets/Icons/edit.svg" alt="Edit Icon" />
+                    </Link>
+                    <img className="viewRecipe__icon viewRecipe__upload" src="/src/assets/Icons/share.svg" alt="Share Icon" onClick={handleShare}/>
+                    <Link to={"/delete/:id"}>
+                        <img className="viewRecipe__icon" src="/src/assets/Icons/icon-delete.svg" alt="Delete Icon" />
+                    </Link>
+                </div>
+            </section>
             
-            <div className="viewRecipe__icons">
-                <img className="viewRecipe__icon viewRecipe__back" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" onClick={()=> navigate(-1)}/>
-                <img className="viewRecipe__icon" src="/src/assets/Icons/like.svg" alt="Likes Icon" />
-                <Link to={"/edit/:id"}>
-                    <img className="viewRecipe__icon" src="/src/assets/Icons/edit.svg" alt="Edit Icon" />
-                </Link>
-                <img className="viewRecipe__icon viewRecipe__upload" src="/src/assets/Icons/share.svg" alt="Share Icon" onClick={handleShare}/>
-                <Link to={"/delete/:id"}>
-                    <img className="viewRecipe__icon" src="/src/assets/Icons/icon-delete.svg" alt="Delete Icon" />
-                </Link>
-            </div>
         </>
     )
 }

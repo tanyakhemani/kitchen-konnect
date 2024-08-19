@@ -1,3 +1,5 @@
+@use "../../styles/partials/mixins" as *;
+
 .viewRecipe{
 
     &__icons{
@@ -13,5 +15,15 @@
     &__icon{
         height: 2rem;
         cursor: pointer;
+    }
+
+    @include tablet {
+        margin: 0 12rem;
+        padding: 0 3.2rem;
+    }
+
+    @include desktop {
+        margin: 0 30rem;
+        padding: 0 3.2rem;
     }
 }

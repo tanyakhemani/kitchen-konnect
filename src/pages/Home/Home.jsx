@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
 
     const [recipes, setRecipes] = useState();
+    const [searchValue, setSearchValue] = useState("");
 
     const loadTopRecipes = async() => {
         try {
@@ -34,7 +35,7 @@ const Home = () => {
     return(
         <>
             <section className="home">
-                <Search />
+                <Search searchValue={searchValue} setSearchValue={setSearchValue} />
                 <div className="home__allCards">
                     {
                         recipes?.map((recipe)=>(

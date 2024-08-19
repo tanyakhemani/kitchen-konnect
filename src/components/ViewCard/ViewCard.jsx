@@ -14,20 +14,21 @@ const ViewCard = ({recipe}) => {
     return(
         <>
             <div className="viewCard">
-                <div className="viewCard__imgBox">
-                    <img className="viewCard__img" src="" alt="Image" />
-                </div>
-                <div className="viewCard__detailBox">
-                    <div className="viewCard__details">
-                        <Link className="viewCard__titleBox" to={`/view/${recipe.id}`}>
-                            <input type="text" className="viewCard__title" placeholder="Title" value={recipe.title}/>
-                        </Link>
-                        <Link to={`/delete/${recipe.id}`}>
-                            <img className="viewCard__delete" src="/src/assets/Icons/icon-delete.svg" alt="Delete Icon" />
-                        </Link>
+                <div className="viewCard__wrapper">
+                    <div className="viewCard__imgBox">
+                        <img className="viewCard__img" src="/src/assets/Logo/foodLogo.png" alt="Image" />
                     </div>
-                    <div className="viewCard__descriptionBox">
-                        <textarea className="viewCard__description" placeholder="Description" value={recipe.description} disabled/>
+                    <div className="viewCard__detailBox">
+                        <div className="viewCard__details">
+                            <Link className="viewCard__titleBox" to={`/view/${recipe.id}`}>
+                                <div type="text" className="viewCard__title" placeholder="Title">{recipe.title}</div>
+                            </Link>
+                            <Link to={`/delete/${recipe.id}`}>
+                                <img className="viewCard__delete" src="/src/assets/Icons/icon-delete.svg" alt="Delete Icon" />
+                            </Link>
+                        </div>
+                        <div className="viewCard__descriptionBox">
+                            <div className="viewCard__description" placeholder="Description">{recipe.description}</div>
                             <div className="viewCard__icons">
                                 <img className="viewCard__icon" src="/src/assets/Icons/like.svg" alt="Likes Icon" />
                                 <Link to={`/edit/${recipe.id}`}>
@@ -35,8 +36,10 @@ const ViewCard = ({recipe}) => {
                                 </Link>
                                 <img className="viewCard__icon viewCard__upload" src="/src/assets/Icons/share.svg" alt="Share Icon" onClick={() => handleShare(recipe.id)} />
                             </div>
+                        </div>
                     </div>
                 </div>
+                
             </div>
         </>
     )

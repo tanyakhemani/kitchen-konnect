@@ -1,5 +1,9 @@
+@use "../../styles/partials/mixins" as *;
+
 .search{
     padding: 2rem 0;
+    display: flex;
+    justify-content: center;
 
     &__searchBox{
         width: 100%;
@@ -7,6 +11,10 @@
         align-items: center;
         position: relative;
         height: 4rem;
+
+        @include tablet{
+            width: 70%;
+        }
     }
 
     &__searchIcon{
@@ -25,4 +33,6 @@
         background-color: #fafafa;
         padding-left: 3rem;
     }
+
+
 }
