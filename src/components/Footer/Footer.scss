@@ -6,24 +6,49 @@
 
 .footer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin-top: auto;
     padding: 2rem;
     border: 1px solid black;
     background-color: black;
+    height: 8rem;
+
+    @include tablet{
+        height: 10rem;
+    }
 
     &__contact{
         display: flex;
         width: 60%;
         color: white;
+
+        @include tablet{
+            font-size: 1.2rem;
+        }
+    }
+
+    &__iconBox{
+        display: flex;
+        width: 30%;
+        justify-content: space-around;
     }
 
     &__icon{
-        width: fit-content;
+        // width: fit-content;
         height: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    &__email{
+        text-decoration: none;
+        color: white;
+
+        @include tablet{
+            font-size: 1.2rem;
+        }
+
     }
 }

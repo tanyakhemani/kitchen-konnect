@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const ViewCard = ({recipe}) => {
 
-    const [recipeImage, setRecipeImage] = useState("/public/vite.svg");
+    const [recipeImage, setRecipeImage] = useState("/src/assets/icons/img-placeholder.svg");
 
     const loadRecipeImage = async() => {
         const response = await axios.get(`http://localhost:8080/api/recipes/${recipe.id}/images`);

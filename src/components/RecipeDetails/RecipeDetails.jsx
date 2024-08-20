@@ -4,7 +4,7 @@ import axios from "axios";
 
 const RecipeDetails = ({recipe, saveRecipe, errors, viewOnly}) => {
     
-    const [recipeImage, setRecipeImage] = useState("/public/vite.svg");
+    const [recipeImage, setRecipeImage] = useState("/src/assets/icons/img-placeholder.svg");
 
     const loadRecipeImage = async() => {
         const response = await axios.get(`http://localhost:8080/api/recipes/${recipe.id}/images`)
