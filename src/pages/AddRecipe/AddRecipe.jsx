@@ -53,6 +53,7 @@ const AddRecipe = () => {
                 
                 const response = await axios.post("http://localhost:8080/api/recipes", formData);
                 alert(`Recipe:${response.data.title} added`);  
+                navigate(`/view/${response.data.id}`);
             }else{
                 alert("Invalid field value");
             } 
