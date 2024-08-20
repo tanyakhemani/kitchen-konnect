@@ -32,9 +32,15 @@ const EditRecipe = () => {
     const handleSave = async() => {
         try {
             if(validateRecipe()){
-                delete editedRecipe["updated_at"];
-                delete editedRecipe["created_at"];
-                const response = await axios.put(`http://localhost:8080/api/recipes/${id}`, editedRecipe);
+                const formData = new FormData();
+                formData.append('title', editedRecipe.title);
+                formData.append('image', editedRecipe.image);
+                formData.append('description', editedRecipe.description);
+                formData.append('ingredients', editedRecipe.ingredients);
+                formData.append('steps', editedRecipe.steps);
+                formData.append('likes', editedRecipe.likes);
+
+                const response = await axios.put(`http://localhost:8080/api/recipes/${id}`, formData);
                 alert(`${response.data.title} saved`);
             }else{
                 alert("Invalid field value");

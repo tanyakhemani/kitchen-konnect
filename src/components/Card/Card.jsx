@@ -5,18 +5,16 @@ import axios from "axios";
 
 const Card = ({ card }) => {
 
-    const [recipeImage, setRecipeImage] = useState();
+    const [recipeImage, setRecipeImage] = useState("/public/vite.svg");
 
     const loadRecipeImage = async() => {
         const response = await axios.get(`http://localhost:8080/api/recipes/${card.id}/images`)
         const imgData = response.data;
-        let image = "/public/vite.svg";
 
         if(imgData){
-            image = `data:image/${imgData.image_type};base64,${imgData.image}`;
+            const image = `data:image/${imgData.image_type};base64,${imgData.image}`;
+            setRecipeImage(image);
         }
-
-        setRecipeImage(image);
     }
 
     useEffect(()=>{

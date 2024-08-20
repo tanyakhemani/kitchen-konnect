@@ -22,12 +22,17 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         border-radius: 1rem;
         display: flex;
-        width: 28.8rem;
-        justify-content: center;
+        justify-content: space-between;
+        padding: 0.7rem;
+        width: 100%;
+
+        @include tablet{
+            width: 85%;
+        }
     }
 
     &__imgBox{
-        width: 35%;
+        width: 30%;
         height: 12.5rem;
         max-width: 9.8rem;
         display: flex;
@@ -37,10 +42,12 @@
 
     &__img{
         width: 100%;
-        height: 80%;
+        height: 90%;
+        border-radius: 1rem;
     }
 
     &__detailBox {
+        width: 65%;
         display: flex;
         // padding-left: 1rem;
         flex-direction: column;
@@ -57,7 +64,7 @@
         width: 1.5rem;
         height: 1.5rem;
         position: absolute;
-        right: 0.5rem;
+        right: 1rem;
         top: 0.5rem;
         cursor: pointer;
     }
@@ -82,7 +89,6 @@
     }
 
     &__descriptionBox{
-        width: 19rem;
         height: 10rem;
         position: relative;
         // @include secondary-border;
@@ -99,7 +105,7 @@
     &__icons{
         position: absolute;
         bottom: 0.5rem;
-        right: 0.5rem;
+        right: 1.2rem;
         display: flex;
         align-items: center;
         gap: 1rem;

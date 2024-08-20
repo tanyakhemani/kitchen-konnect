@@ -10,6 +10,8 @@ const ViewRecipe = () => {
 
     const { id } = useParams();
 
+    const [ likeButton, setLikeButton ] = useState(false);
+
     const[ recipe, setRecipe ] = useState({
         image: null,
         title:"",
@@ -38,10 +40,32 @@ const ViewRecipe = () => {
         })
     }
 
+    const handleLike = async () => {
+        if (recipe) { 
+            let likes = recipe.likes;
+            let likeButtonState = false;
+            
+            if (!likeButton) {
+                likes++;
+                likeButtonState = true; 
+            } else {
+                likes--;
+                likeButtonState = false;
+            }
+            
+            const response = await axios.put(`http://localhost:8080/api/recipes/${recipe.id}/likes`, {likes})  
+            setLikeButton(likeButtonState);
+        }
+    }
+
     useEffect(()=> {
         loadRecipe();
         scroll({top:0})
     }, [id])
+
+    useEffect(()=> {
+        loadRecipe();
+    }, [likeButton])
 
     return(
         <>
@@ -50,7 +74,12 @@ const ViewRecipe = () => {
                 
                 <div className="viewRecipe__icons">
                     <img className="viewRecipe__icon viewRecipe__back" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" onClick={()=> navigate(-1)}/>
-                    <img className="viewRecipe__icon" src="/src/assets/Icons/like.svg" alt="Likes Icon" />
+                    <div>
+                        <div>{recipe.likes}</div>
+                        {!likeButton && (<img className={`viewRecipe__icon`} src="/src/assets/Icons/like.svg" alt="Likes Icon" onClick={handleLike}/>)}
+                        {likeButton && (<img className={`viewRecipe__icon`} src="/src/assets/Icons/liked.svg" alt="Likes Icon" onClick={handleLike}/>)}
+                    </div>
+
                     <Link to={`/edit/${recipe.id}`}>
                         <img className="viewRecipe__icon" src="/src/assets/Icons/edit.svg" alt="Edit Icon" />
                     </Link>

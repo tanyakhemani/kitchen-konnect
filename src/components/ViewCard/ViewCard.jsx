@@ -1,7 +1,21 @@
 import { Link } from "react-router-dom";
 import "./ViewCard.scss";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const ViewCard = ({recipe}) => {
+
+    const [recipeImage, setRecipeImage] = useState("/public/vite.svg");
+
+    const loadRecipeImage = async() => {
+        const response = await axios.get(`http://localhost:8080/api/recipes/${recipe.id}/images`);
+        const imageData = response.data;
+
+        if (imageData){
+            const image = `data:image/${imageData.image_type};base64,${imageData.image}`;
+            setRecipeImage(image);
+        }
+    }
 
     const handleShare = (id) => {
         const recipeUrl = `${window.location}/${id}`;
@@ -11,12 +25,16 @@ const ViewCard = ({recipe}) => {
         })
     }
 
+    useEffect(()=>{
+        loadRecipeImage();
+    }, [recipe]);
+
     return(
         <>
             <div className="viewCard">
                 <div className="viewCard__wrapper">
                     <div className="viewCard__imgBox">
-                        <img className="viewCard__img" src="/src/assets/Logo/foodLogo.png" alt="Image" />
+                        <img className="viewCard__img" src={recipeImage} alt="Image" />
                     </div>
                     <div className="viewCard__detailBox">
                         <div className="viewCard__details">

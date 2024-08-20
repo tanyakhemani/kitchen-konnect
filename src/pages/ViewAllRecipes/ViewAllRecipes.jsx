@@ -18,7 +18,6 @@ const ViewAllRecipes = () => {
     const listRecipes = async() => {
         const response = await axios.get("http://localhost:8080/api/recipes")
         const result = response.data;
-        console.log("call api")
         setRecipeList(result);
     }
     

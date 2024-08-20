@@ -45,7 +45,14 @@ const AddRecipe = () => {
     const handleAddRecipe = async()=>{
         try {
             if(validateRecipe()){
-                const response = await axios.post("http://localhost:8080/api/recipes", newRecipe);
+                const formData = new FormData();
+                formData.append('title', newRecipe.title);
+                formData.append('image', newRecipe.image);
+                formData.append('description', newRecipe.description);
+                formData.append('ingredients', newRecipe.ingredients);
+                formData.append('steps', newRecipe.steps);
+                
+                const response = await axios.post("http://localhost:8080/api/recipes", formData);
                 alert(`Recipe:${response.data.title} added`);  
             }else{
                 alert("Invalid field value");
@@ -68,8 +75,6 @@ const AddRecipe = () => {
 
                 <div className="recipeDetails">
                     <div className="recipeDetails__buttons">
-                        {/* <img className="recipeDetails__button backbtn" src="/src/assets/Icons/back-arrow.svg" alt="Back Icon" onClick= {() => navigate(-1)}/> */}
-
                         <Link className="recipeDetails__buttonBox" to={"/"} >
                             <button className="recipeDetails__button cancelbtn">Cancel</button>
                         </Link>

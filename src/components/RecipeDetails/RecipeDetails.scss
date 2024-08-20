@@ -13,9 +13,20 @@
     }
 
     &__imageBox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width:35%;
         height: 14.5rem;
         @include light-border;
+    }
+
+    &__image{
+        height: 85%;
+    }
+
+    &__fileUpload{
+        height: 15%;
     }
 
     &__details{
