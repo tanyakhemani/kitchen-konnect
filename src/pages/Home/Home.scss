@@ -1,0 +1,17 @@
+@use "../../styles/partials/mixins" as *;
+
+.home{
+
+    &__allCards{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 1.5rem 0;
+    }
+    
+    @include tablet {
+        margin: 0 12rem;
+        padding: 0 3.2rem;
+    }
+
+}

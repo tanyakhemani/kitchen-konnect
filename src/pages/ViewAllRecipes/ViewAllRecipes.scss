@@ -1,0 +1,32 @@
+.allRecipes{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__top{
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        padding: 1.5rem;
+    }
+
+    &__backBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
+        cursor: pointer;
+    }
+
+    .search{
+        width: 100%;
+        padding: 0;
+    }
+
+    &__viewCards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}

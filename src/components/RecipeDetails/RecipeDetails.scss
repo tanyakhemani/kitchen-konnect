@@ -1,0 +1,87 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.recipeDetails{
+
+    &__detailsBox{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+    }
+
+    &__imageBox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width:35%;
+        height: 14.5rem;
+        @include light-border;
+    }
+
+    &__image{
+        height: 85%;
+    }
+
+    &__fileUpload{
+        height: 15%;
+    }
+
+    &__details{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 60%;
+        height: 100%;
+    }
+
+    &__title{
+        font-family: $font-bold;
+        height: 2.5rem;
+        width: 100%;
+        padding-left: 0.5rem;
+        @include light-border;
+    }
+
+    &__description{
+        font-family: $font-regular;
+        height: 8rem;
+        width: 100%;
+        padding-left: 0.5rem;
+        @include light-border;
+    }
+
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    &__textarea{
+        font-family: $font-regular;
+        width: 100%;
+        height: 25rem;
+        padding: 1rem;
+        @include light-border;
+    }
+
+    .ingredients{
+       height: 9rem; 
+    }
+
+    .errorBox{
+        border: 1px solid red;
+    }
+
+    .errorMsg{
+        color: red;
+        font-family: $font-regular;
+        padding-top: 0.3rem;
+    }
+
+    .heading{
+        font-family: $font-regular;
+    }
+}

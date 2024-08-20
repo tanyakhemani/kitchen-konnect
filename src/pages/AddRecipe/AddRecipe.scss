@@ -1,0 +1,13 @@
+@use "../../styles/partials/mixins" as *;
+
+.addRecipe{
+    @include tablet {
+        margin: 0 12rem;
+        padding: 0 3.2rem;
+    }
+
+    @include desktop {
+        margin: 0 30rem;
+        padding: 0 3.2rem;
+    }
+}

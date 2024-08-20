@@ -1,0 +1,56 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+
+@include font-faces;
+
+.navbar{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    height: 10rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: $font-regular;
+    padding: 1rem 0;
+    background-color: black;
+
+    &__logo{
+        width: 40%;
+    }
+
+    &__logo-image{
+        width: 8rem;
+    }
+
+    &__buttonBox{
+        width: 20%;
+        height: 80%;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        background-color: black;
+
+        &:hover{
+            background-color: rgb(255, 191, 3);
+            border-radius: 1rem;
+        }
+    }
+
+    &__button{
+        display: flex;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: white;
+    }
+
+    .active{
+        background-color: rgb(255, 191, 3);
+        border-radius: 1rem;
+    }
+}
