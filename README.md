@@ -1,6 +1,8 @@
-# kitchen-konnect-api
+# kitchen-konnect
 
-Backend API for Kitchen-Konnect UI
+Kitchen-Konnect UI
+
+kitchen-konnect API repository link: https://github.com/tanyakhemani/kitchen-konnect-api
 
 ## Overview
 
