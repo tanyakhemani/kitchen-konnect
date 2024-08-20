@@ -84,7 +84,7 @@ const ViewRecipe = () => {
                         <img className="viewRecipe__icon" src="/src/assets/Icons/edit.svg" alt="Edit Icon" />
                     </Link>
                     <img className="viewRecipe__icon viewRecipe__upload" src="/src/assets/Icons/share.svg" alt="Share Icon" onClick={handleShare}/>
-                    <Link to={"/delete/:id"}>
+                    <Link to={`/delete/${recipe.id}`}>
                         <img className="viewRecipe__icon" src="/src/assets/Icons/icon-delete.svg" alt="Delete Icon" />
                     </Link>
                 </div>
