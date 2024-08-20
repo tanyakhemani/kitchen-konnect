@@ -26,7 +26,7 @@ const Delete = () => {
     const handleDelete = async() => {
         await axios.delete(`http://localhost:8080/api/recipes/${id}`)
         alert(`Recipe Deleted`)
-        navigate(-1);
+        navigate("/view");
     }
 
     useEffect(() => {
