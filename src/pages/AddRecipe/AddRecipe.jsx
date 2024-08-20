@@ -36,7 +36,6 @@ const AddRecipe = () => {
             currentErrors.steps = true;
             isValid = false;
         }
-        console.log(currentErrors)
         
         setErrors(currentErrors);
         return isValid;
