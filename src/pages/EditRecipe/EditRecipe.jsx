@@ -84,13 +84,13 @@ const EditRecipe = () => {
                 
                 <div className="recipeDetails">
                     <div className="recipeDetails__buttons">
-                        <Link className="recipeDetails__buttonBox" to={"/"} >
-                            <button className="recipeDetails__button cancelbtn">Cancel</button>
-                        </Link>
+                        <div className="recipeDetails__buttonBox">
+                            <button className="recipeDetails__button cancelbtn" onClick={()=>navigate(-1)}>Cancel</button>
+                        </div>
                         
-                        <Link className="recipeDetails__buttonBox" to={""}>
+                        <div className="recipeDetails__buttonBox">
                             <button className="recipeDetails__button savebtn" onClick={handleSave}>Save</button>
-                        </Link>
+                        </div>
                     </div>
                 </div>
             </section>
